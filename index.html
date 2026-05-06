@@ -20,10 +20,6 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 overflow-x:hidden;
 font-family:'Poppins',sans-serif;
@@ -261,7 +257,7 @@ line-height:2;
 color:#4f6160;
 }
 
-/* CAKE */
+/* cake */
 
 .cake-section{
 text-align:center;
@@ -273,100 +269,21 @@ font-size:20px;
 color:#6f7a79;
 }
 
-.cake-wrap{
-position:relative;
-width:350px;
-margin:90px auto 0;
+.cake{
+font-size:220px;
+margin-top:40px;
 cursor:pointer;
 transition:.4s;
 }
 
-.cake-wrap:hover{
-transform:scale(1.03);
-}
-
-.cake-base{
-width:350px;
-height:160px;
-background:linear-gradient(to bottom,#ffd58c,#ffb7cb);
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-position:relative;
-}
-
-.cake-top{
-position:absolute;
-top:-85px;
-left:55px;
-width:240px;
-height:100px;
-background:linear-gradient(to bottom,#ffe5f1,#ffe0a0);
-border-radius:25px;
-}
-
-.icing{
-position:absolute;
-width:100%;
-height:24px;
-background:#ffb4cf;
-top:0;
-border-radius:25px 25px 0 0;
-}
-
-.candles{
-position:absolute;
-top:-145px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:15px;
-}
-
-.candle{
-width:12px;
-height:50px;
-background:#14a49d;
-border-radius:4px;
-position:relative;
-}
-
-.candle:nth-child(2){
-background:#ffb74d;
-}
-
-.candle:nth-child(3){
-background:#f48fb1;
-}
-
-.candle:nth-child(4){
-background:#ba68c8;
-}
-
-.candle:nth-child(5){
-background:#4db6ac;
-}
-
-.flame{
-position:absolute;
-top:-20px;
-left:-1px;
-width:14px;
-height:20px;
-background:url('https://cdn-icons-png.flaticon.com/512/3069/3069172.png');
-background-size:cover;
-animation:flicker .8s infinite;
-}
-
-@keyframes flicker{
-50%{
-transform:scale(.85);
-}
+.cake:hover{
+transform:scale(1.05);
 }
 
 #wish{
 display:none;
-margin-top:55px;
-font-size:62px;
+margin-top:40px;
+font-size:60px;
 font-family:'Cormorant Garamond',serif;
 color:#d4a038;
 }
@@ -410,8 +327,6 @@ text-align:center;
 color:#556766;
 }
 
-/* responsive */
-
 @media(max-width:768px){
 
 .title .gold,
@@ -448,8 +363,8 @@ font-size:45px;
 font-size:18px;
 }
 
-.cake-wrap{
-transform:scale(.8);
+.cake{
+font-size:140px;
 }
 }
 
@@ -457,8 +372,6 @@ transform:scale(.8);
 </head>
 
 <body>
-
-<!-- petals -->
 
 <div class="petals">
 <span></span>
@@ -468,19 +381,13 @@ transform:scale(.8);
 <span></span>
 </div>
 
-<!-- HERO -->
-
 <section class="hero">
-
-<!-- peacock feathers -->
 
 <img class="feather left-feather"
 src="https://cdn-icons-png.flaticon.com/512/599/599502.png">
 
 <img class="feather right-feather"
 src="https://cdn-icons-png.flaticon.com/512/599/599502.png">
-
-<!-- floating Krishna -->
 
 <img class="krishna"
 src="8d36ae82-f563-496e-a46e-bcaa3cbf521d.png">
@@ -536,8 +443,6 @@ COUNTDOWN TO 7 MAY 2026
 
 </section>
 
-<!-- LETTER -->
-
 <section class="section">
 
 <div class="glass">
@@ -562,16 +467,12 @@ You are my comfort, my strength and my safest place forever.
 <br><br>
 
 Happy Birthday Amma ♥  
-Thank you for filling our lives with warmth,
-kindness and endless love.
 
 </div>
 
 </div>
 
 </section>
-
-<!-- CAKE -->
 
 <section class="section cake-section">
 
@@ -580,45 +481,15 @@ make a wish
 </div>
 
 <h2 class="heading">
-Tap The Cake To Blow Out The Candles
+Tap The Cake To Reveal The Memories
 </h2>
 
 <p class="guide">
-The memories will reveal after the candles go out ✨
+Click the cake to blow out the candles ✨
 </p>
 
-<div class="cake-wrap" onclick="celebrate()">
-
-<div class="candles" id="candles">
-
-<div class="candle">
-<div class="flame"></div>
-</div>
-
-<div class="candle">
-<div class="flame"></div>
-</div>
-
-<div class="candle">
-<div class="flame"></div>
-</div>
-
-<div class="candle">
-<div class="flame"></div>
-</div>
-
-<div class="candle">
-<div class="flame"></div>
-</div>
-
-</div>
-
-<div class="cake-top">
-<div class="icing"></div>
-</div>
-
-<div class="cake-base"></div>
-
+<div class="cake" onclick="celebrate()">
+🎂
 </div>
 
 <h2 id="wish">
@@ -626,8 +497,6 @@ Happy Birthday Amma ♥
 </h2>
 
 </section>
-
-<!-- GALLERY -->
 
 <section class="section" id="gallery">
 
@@ -656,55 +525,19 @@ Moments With Amma
 <div class="caption">Love that never fades</div>
 </div>
 
-<div class="card">
-<img src="IMG_20190526_232109.jpg">
-<div class="caption">Moments full of warmth</div>
-</div>
-
-<div class="card">
-<img src="IMG_20190707_125730.jpg">
-<div class="caption">Golden memories ♥</div>
-</div>
-
-<div class="card">
-<img src="IMG_20180318_124052.jpg">
-<div class="caption">Always glowing beautifully</div>
-</div>
-
-<div class="card">
-<img src="IMG20200814195528.jpg">
-<div class="caption">A heart full of kindness</div>
-</div>
-
-<div class="card">
-<img src="IMG20200814200110.jpg">
-<div class="caption">Smiles that light up everything</div>
-</div>
-
-<div class="card">
-<img src="IMG20200814200207.jpg">
-<div class="caption">Forever loved ♥</div>
-</div>
-
 </div>
 
 </section>
 
-<!-- MUSIC -->
-
 <audio autoplay loop id="bgmusic">
 <source src="Krish Theme _ Krishna Theme  _ Shri Krishna Govinda Hare Murari Soulful Flute Cover by Kiran Baral(1).mp3">
 </audio>
-
-<!-- birthday song -->
 
 <audio id="birthdaySong">
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8d4b1f3f5.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3">
 </audio>
 
 <script>
-
-/* countdown */
 
 const birthday = new Date("May 7, 2026 00:00:00").getTime();
 
@@ -713,47 +546,21 @@ setInterval(() => {
 const now = new Date().getTime();
 const gap = birthday - now;
 
-const days = Math.floor(gap / (1000*60*60*24));
+document.getElementById("days").innerHTML =
+Math.floor(gap / (1000*60*60*24));
 
-const hours = Math.floor(
-(gap % (1000*60*60*24))
-/ (1000*60*60)
-);
+document.getElementById("hours").innerHTML =
+Math.floor((gap % (1000*60*60*24))/(1000*60*60));
 
-const minutes = Math.floor(
-(gap % (1000*60*60))
-/ (1000*60)
-);
+document.getElementById("minutes").innerHTML =
+Math.floor((gap % (1000*60*60))/(1000*60));
 
-const seconds = Math.floor(
-(gap % (1000*60))
-/ 1000
-);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
+document.getElementById("seconds").innerHTML =
+Math.floor((gap % (1000*60))/1000);
 
 },1000);
 
-/* autoplay music */
-
-window.addEventListener('load',()=>{
-
-const music=document.getElementById("bgmusic");
-
-music.volume=.5;
-
-music.play().catch(()=>{});
-
-});
-
-/* cake click */
-
 function celebrate(){
-
-document.getElementById("candles").innerHTML="";
 
 document.getElementById("wish").style.display="block";
 

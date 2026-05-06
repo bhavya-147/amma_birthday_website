@@ -1,1 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Amma</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:
+radial-gradient(circle at top,#fff8ea,#f7efdd 40%,#edf8f2 75%,#ffe9f1);
+color:#3f5b59;
+}
+
+/* petals */
+
+.petals span{
+position:fixed;
+top:-100px;
+width:18px;
+height:18px;
+background:#f8b8ca;
+border-radius:0 100% 0 100%;
+opacity:.55;
+animation:fall linear infinite;
+z-index:1;
+}
+
+.petals span:nth-child(1){
+left:10%;
+animation-duration:12s;
+}
+
+.petals span:nth-child(2){
+left:25%;
+animation-duration:16s;
+background:#ffd28f;
+}
+
+.petals span:nth-child(3){
+left:42%;
+animation-duration:15s;
+}
+
+.petals span:nth-child(4){
+left:70%;
+animation-duration:18s;
+background:#ffd28f;
+}
+
+.petals span:nth-child(5){
+left:85%;
+animation-duration:14s;
+}
+
+@keyframes fall{
+to{
+transform:translateY(120vh) rotate(360deg);
+}
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
+overflow:hidden;
+}
+
+/* peacock feathers */
+
+.feather{
+position:absolute;
+width:260px;
+opacity:.92;
+z-index:1;
+}
+
+.left-feather{
+left:-20px;
+top:20px;
+}
+
+.right-feather{
+right:-20px;
+top:20px;
+transform:scaleX(-1);
+}
+
+/* floating Krishna */
+
+.krishna{
+position:absolute;
+left:30px;
+bottom:20px;
+width:150px;
+animation:float 5s ease-in-out infinite;
+z-index:2;
+}
+
+.radha{
+position:absolute;
+right:30px;
+bottom:20px;
+width:160px;
+animation:float 6s ease-in-out infinite;
+z-index:2;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-18px);
+}
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+max-width:950px;
+}
+
+.radhe{
+font-family:'Great Vibes',cursive;
+font-size:58px;
+color:#dd6e9d;
+margin-bottom:18px;
+}
+
+.title{
+font-family:'Cormorant Garamond',serif;
+line-height:.92;
+}
+
+.title .gold{
+display:block;
+font-size:130px;
+font-weight:600;
+color:#d5a03c;
+}
+
+.title .green{
+display:block;
+font-size:130px;
+font-weight:600;
+color:#0f9685;
+}
+
+.subtitle{
+margin-top:28px;
+font-size:24px;
+line-height:1.8;
+color:#61706e;
+}
+
+/* countdown */
+
+.count-title{
+margin-top:50px;
+margin-bottom:25px;
+font-size:14px;
+letter-spacing:5px;
+color:#758280;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.box{
+width:130px;
+height:130px;
+background:rgba(255,255,255,.45);
+backdrop-filter:blur(12px);
+border-radius:30px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.box h2{
+font-size:55px;
+font-family:'Cormorant Garamond',serif;
+color:#d7a33b;
+}
+
+.box p{
+margin-top:6px;
+font-size:13px;
+letter-spacing:4px;
+}
+
+/* letter */
+
+.section{
+padding:120px 20px;
+position:relative;
+z-index:2;
+}
+
+.glass{
+max-width:850px;
+margin:auto;
+background:rgba(255,255,255,.5);
+backdrop-filter:blur(15px);
+padding:60px;
+border-radius:40px;
+box-shadow:0 15px 35px rgba(0,0,0,.07);
+}
+
+.small{
+font-family:'Great Vibes',cursive;
+font-size:40px;
+color:#de719f;
+text-align:center;
+}
+
+.heading{
+font-family:'Cormorant Garamond',serif;
+font-size:70px;
+color:#0c9788;
+text-align:center;
+margin:10px 0 35px;
+}
+
+.letter{
+font-size:21px;
+line-height:2;
+color:#4f6160;
+}
+
+/* CAKE */
+
+.cake-section{
+text-align:center;
+}
+
+.guide{
+margin-top:15px;
+font-size:20px;
+color:#6f7a79;
+}
+
+.cake-wrap{
+position:relative;
+width:350px;
+margin:90px auto 0;
+cursor:pointer;
+transition:.4s;
+}
+
+.cake-wrap:hover{
+transform:scale(1.03);
+}
+
+.cake-base{
+width:350px;
+height:160px;
+background:linear-gradient(to bottom,#ffd58c,#ffb7cb);
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+position:relative;
+}
+
+.cake-top{
+position:absolute;
+top:-85px;
+left:55px;
+width:240px;
+height:100px;
+background:linear-gradient(to bottom,#ffe5f1,#ffe0a0);
+border-radius:25px;
+}
+
+.icing{
+position:absolute;
+width:100%;
+height:24px;
+background:#ffb4cf;
+top:0;
+border-radius:25px 25px 0 0;
+}
+
+.candles{
+position:absolute;
+top:-145px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:15px;
+}
+
+.candle{
+width:12px;
+height:50px;
+background:#14a49d;
+border-radius:4px;
+position:relative;
+}
+
+.candle:nth-child(2){
+background:#ffb74d;
+}
+
+.candle:nth-child(3){
+background:#f48fb1;
+}
+
+.candle:nth-child(4){
+background:#ba68c8;
+}
+
+.candle:nth-child(5){
+background:#4db6ac;
+}
+
+.flame{
+position:absolute;
+top:-20px;
+left:-1px;
+width:14px;
+height:20px;
+background:url('https://cdn-icons-png.flaticon.com/512/3069/3069172.png');
+background-size:cover;
+animation:flicker .8s infinite;
+}
+
+@keyframes flicker{
+50%{
+transform:scale(.85);
+}
+}
+
+#wish{
+display:none;
+margin-top:55px;
+font-size:62px;
+font-family:'Cormorant Garamond',serif;
+color:#d4a038;
+}
+
+/* gallery */
+
+#gallery{
+display:none;
+}
+
+.grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+overflow:hidden;
+border-radius:28px;
+background:white;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:340px;
+object-fit:cover;
+}
+
+.caption{
+padding:18px;
+font-size:18px;
+text-align:center;
+color:#556766;
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.title .gold,
+.title .green{
+font-size:75px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+.radhe{
+font-size:40px;
+}
+
+.feather{
+width:120px;
+}
+
+.krishna,
+.radha{
+width:85px;
+}
+
+.glass{
+padding:35px;
+}
+
+.heading{
+font-size:45px;
+}
+
+.letter{
+font-size:18px;
+}
+
+.cake-wrap{
+transform:scale(.8);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- petals -->
+
+<div class="petals">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<!-- peacock feathers -->
+
+<img class="feather left-feather"
+src="https://cdn-icons-png.flaticon.com/512/599/599502.png">
+
+<img class="feather right-feather"
+src="https://cdn-icons-png.flaticon.com/512/599/599502.png">
+
+<!-- floating Krishna -->
+
+<img class="krishna"
+src="8d36ae82-f563-496e-a46e-bcaa3cbf521d.png">
+
+<img class="radha"
+src="498ad61d-39bb-4314-a913-1c6cd3327e17.png">
+
+<div class="hero-content">
+
+<div class="radhe">
+Radhe Radhe ♥
+</div>
+
+<h1 class="title">
+<span class="gold">Happiest</span>
+<span class="green">Birthday Amma</span>
+</h1>
+
+<p class="subtitle">
+A little Vrindavan made with love,<br>
+for the most beautiful soul in my life.
+</p>
+
+<div class="count-title">
+COUNTDOWN TO 7 MAY 2026
+</div>
+
+<div class="countdown">
+
+<div class="box">
+<h2 id="days">00</h2>
+<p>DAYS</p>
+</div>
+
+<div class="box">
+<h2 id="hours">00</h2>
+<p>HOURS</p>
+</div>
+
+<div class="box">
+<h2 id="minutes">00</h2>
+<p>MINUTES</p>
+</div>
+
+<div class="box">
+<h2 id="seconds">00</h2>
+<p>SECONDS</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LETTER -->
+
+<section class="section">
+
+<div class="glass">
+
+<div class="small">
+a letter
+</div>
+
+<h2 class="heading">
+To My Amma
+</h2>
+
+<div class="letter">
+
+Amma, every flower, every memory and every little detail
+on this website was made only with love for you.
+
+<br><br>
+
+You are my comfort, my strength and my safest place forever.
+
+<br><br>
+
+Happy Birthday Amma ♥  
+Thank you for filling our lives with warmth,
+kindness and endless love.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CAKE -->
+
+<section class="section cake-section">
+
+<div class="small">
+make a wish
+</div>
+
+<h2 class="heading">
+Tap The Cake To Blow Out The Candles
+</h2>
+
+<p class="guide">
+The memories will reveal after the candles go out ✨
+</p>
+
+<div class="cake-wrap" onclick="celebrate()">
+
+<div class="candles" id="candles">
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+</div>
+
+<div class="cake-top">
+<div class="icing"></div>
+</div>
+
+<div class="cake-base"></div>
+
+</div>
+
+<h2 id="wish">
+Happy Birthday Amma ♥
+</h2>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+
+<div class="small">
+memory lane
+</div>
+
+<h2 class="heading">
+Moments With Amma
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="IMG_20180804_121907.jpg">
+<div class="caption">Beautiful memories together ✨</div>
+</div>
+
+<div class="card">
+<img src="IMG_20200319_224156.jpg">
+<div class="caption">Forever my safe place</div>
+</div>
+
+<div class="card">
+<img src="IMG_20200320_080810.jpg">
+<div class="caption">Love that never fades</div>
+</div>
+
+<div class="card">
+<img src="IMG_20190526_232109.jpg">
+<div class="caption">Moments full of warmth</div>
+</div>
+
+<div class="card">
+<img src="IMG_20190707_125730.jpg">
+<div class="caption">Golden memories ♥</div>
+</div>
+
+<div class="card">
+<img src="IMG_20180318_124052.jpg">
+<div class="caption">Always glowing beautifully</div>
+</div>
+
+<div class="card">
+<img src="IMG20200814195528.jpg">
+<div class="caption">A heart full of kindness</div>
+</div>
+
+<div class="card">
+<img src="IMG20200814200110.jpg">
+<div class="caption">Smiles that light up everything</div>
+</div>
+
+<div class="card">
+<img src="IMG20200814200207.jpg">
+<div class="caption">Forever loved ♥</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<audio autoplay loop id="bgmusic">
+<source src="Krish Theme _ Krishna Theme  _ Shri Krishna Govinda Hare Murari Soulful Flute Cover by Kiran Baral(1).mp3">
+</audio>
+
+<!-- birthday song -->
+
+<audio id="birthdaySong">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8d4b1f3f5.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3">
+</audio>
+
+<script>
+
+/* countdown */
+
+const birthday = new Date("May 7, 2026 00:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+const gap = birthday - now;
+
+const days = Math.floor(gap / (1000*60*60*24));
+
+const hours = Math.floor(
+(gap % (1000*60*60*24))
+/ (1000*60*60)
+);
+
+const minutes = Math.floor(
+(gap % (1000*60*60))
+/ (1000*60)
+);
+
+const seconds = Math.floor(
+(gap % (1000*60))
+/ 1000
+);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+/* autoplay music */
+
+window.addEventListener('load',()=>{
+
+const music=document.getElementById("bgmusic");
+
+music.volume=.5;
+
+music.play().catch(()=>{});
+
+});
+
+/* cake click */
+
+function celebrate(){
+
+document.getElementById("candles").innerHTML="";
+
+document.getElementById("wish").style.display="block";
+
+document.getElementById("gallery").style.display="block";
+
+document.getElementById("birthdaySong").play();
+
+confetti({
+particleCount:250,
+spread:140
+});
+
+window.scrollTo({
+top:document.getElementById("gallery").offsetTop-40,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
